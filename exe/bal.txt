@@ -1,0 +1,1 @@
+﻿cd S:\Program Files\AutoHotkey\Compiler & Ahk2Exe.exe /in C:\tg-bot\ahk\getBalance.ahk /out C:\tg-bot\exe\getBalance.exe
