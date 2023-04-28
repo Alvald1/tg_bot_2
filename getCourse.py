@@ -10,4 +10,4 @@ def get_price(ticket, currency):
         price = client.get_spot_price(currency_pair=f'{ticket}-{currency}')
     except Exception as e:
         return False
-    return round(float(price.amount),2)
+    return round(float(price.amount), 2)

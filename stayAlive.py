@@ -21,6 +21,7 @@ def doit():
             print(i)
             getMove(i)
             p = subprocess.run('exe\stayAlive.exe')
+            time.sleep(2)
 
 
 def start():

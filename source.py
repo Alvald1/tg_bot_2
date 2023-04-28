@@ -73,7 +73,7 @@ def valid_3(chat_id, msg_id, s):
     time = [time[0], int(time[1][0])*60*60+int(time[1][1])*60]
 
     '##############################################################'
-    if ans[3][:-1] == str(round(user.amount*user.rate*0.97, 2)) and ans[0] == user.time and 0 < (time[1]-int(user.time[1])) <= 1800:
+    if ans[3][:-1] == str(round(user.amount*user.rate*0.97, 2)) and ans[0] == user.time[0] and 0 < (time[1]-int(user.time[1])) <= 1800:
         '#########################################################'
 
         s = s.replace('🔵Проверка оплаты...', '🟢Оплачено')
@@ -82,6 +82,8 @@ def valid_3(chat_id, msg_id, s):
         bot.send_message(chat_id, '✅Ваш платеж подтвержден\nОжидайте пополнение с нашей стороны', parse_mode='html')
         for i in admin_id:
             bot.send_message(i, 'Поступил платеж\n\n' + s, parse_mode='html')
+        if len(qiwi_dict) > 500:
+            qiwi_dict = {x: y for x, y in list(qiwi_dict.items())[250:]}
     else:
         bot.send_message(chat_id, '❌Ваш платеж не подтвержден', parse_mode='html')
 
@@ -103,6 +105,8 @@ def valid_1(chat_id, msg_id, s):
         bot.send_message(chat_id, '✅Ваш платеж подтвержден\nОжидайте пополнение с нашей стороны', parse_mode='html')
         for i in admin_id:
             bot.send_message(i, 'Поступил платеж\n\n' + s, parse_mode='html')
+        if len(cryp_dict) > 500:
+            cryp_dict = {x: y for x, y in list(cryp_dict.items())[250:]}
     else:
         bot.edit_message_text(chat_id=chat_id, message_id=msg_id, text=s)
         bot.send_message(chat_id, '❌Ваш платеж не подтвержден', parse_mode='html')

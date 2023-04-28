@@ -28,13 +28,13 @@ def getLastHis(phone):
             total = soup[0].contents[1].contents[1].contents[0].contents[2].contents[0].contents[0].contents[0].contents[0].contents[0].contents[0].contents[0].contents[1].contents[0]
         except Exception:
             try:
-                num_from=soup[0].contents[1].contents[1].contents[0].contents[1].contents[1].contents[0].contents[0][14:]
-                total=soup[0].contents[1].contents[1].contents[0].contents[1].contents[3].next_element.contents[0].contents[0].contents[0].contents[0].contents[0].contents[0].contents[0].contents[1].contents[0]
-                date=soup[0].contents[1].contents[1].contents[0].contents[1].contents[3].next_element.contents[0].contents[0].contents[0].contents[0].next_sibling.contents[0].contents[1].contents[0].contents[0].contents[1].contents[0]
-                name_from='Аноним'
+                num_from = soup[0].contents[1].contents[1].contents[0].contents[1].contents[1].contents[0].contents[0][14:]
+                total = soup[0].contents[1].contents[1].contents[0].contents[1].contents[3].next_element.contents[0].contents[0].contents[0].contents[0].contents[0].contents[0].contents[0].contents[1].contents[0]
+                date = soup[0].contents[1].contents[1].contents[0].contents[1].contents[3].next_element.contents[0].contents[0].contents[0].contents[0].next_sibling.contents[0].contents[1].contents[0].contents[0].contents[1].contents[0]
+                name_from = 'Аноним'
             except Exception:
                 return ("Что-то пошло не так")
-            
+
     return [date, num_from, name_from, unidecode.unidecode(total)[:-2]+'₽']
 
 

@@ -1,7 +1,7 @@
 import subprocess
 import time
 cmd = ['exe\setHistory.exe', 'exe\setIncome.exe', 'exe\getHistory.exe', 'exe\getPos.exe', 'exe\getBalance.exe', 'exe\stayAlive.exe']
-#p = subprocess.run(cmd[3])
+# p = subprocess.run(cmd[3])
 
 
 def getHis():
